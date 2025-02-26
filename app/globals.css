@@ -10,11 +10,29 @@
   --primary-foreground: 0 0% 0%;
 }
 
-body {
+/* body {
   background-color: black;
   color: white;
   letter-spacing: -0.02em;
   font-size: 14px;
+} */
+
+body {
+  background-color: #030a10 !important;
+  color: white;
+  letter-spacing: -0.02em;
+  font-size: 14px;
+  --s: 30px; /* Reduced size for smaller grid */
+  --n: 5;
+  --t: 1px;
+  --g: 3px; /* Reduced gap for smaller grid */
+  --c: #4f56574d 25%, #0000 0;
+  background: conic-gradient(at var(--g) var(--t), var(--c))
+      calc((var(--s) / var(--n) - var(--g) + var(--t)) / 2) 0 /
+      calc(var(--s) / var(--n)) var(--s),
+    conic-gradient(from 180deg at var(--t) var(--g), var(--c)) 0
+      calc((var(--s) / var(--n) - var(--g) + var(--t)) / 2) / var(--s)
+      calc(var(--s) / var(--n));
 }
 
 h1 {
@@ -68,36 +86,6 @@ h3 {
   animation: float 6s ease-in-out infinite;
 }
 
-:root {
-  --grid-size: 30px;
-  --dash-length: 5px;
-  --dash-width: 1px;
-  --dash-color: #444;
-  --background: #222;
-}
-
-body {
-  background-color: var(--background);
-  background-size: calc(var(--dash-length) * 2) calc(var(--dash-length) * 2),
-    var(--grid-size) var(--grid-size);
-  background-image: linear-gradient(
-      to bottom,
-      transparent var(--dash-length),
-      var(--background) var(--dash-length)
-    ),
-    linear-gradient(
-      to right,
-      var(--dash-color) var(--dash-width),
-      transparent var(--dash-width)
-    ),
-    linear-gradient(
-      to right,
-      transparent var(--dash-length),
-      var(--background) var(--dash-length)
-    ),
-    linear-gradient(
-      to bottom,
-      var(--dash-color) var(--dash-width),
-      transparent var(--dash-width)
-    );
+span {
+  line-height: 1;
 }
