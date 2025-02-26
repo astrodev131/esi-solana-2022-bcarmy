@@ -3,10 +3,10 @@ import SRPCircle from "./SRPCircle";
 
 const FirstPart = () => {
   return (
-    <div className="xl:px-20 px-10">
+    <div className="xl:px-10 px-4">
       <div className="relative w-full">
-        <SRPCircle size="280px" left="-left-96" />
-        <div className="absolute bottom-1/2 translate-y-1/2 right-0 p-4">
+        <SRPCircle size="240px" left="-left-96" />
+        <div className="absolute bottom-1/2 max-w-[700px] translate-y-1/2 right-0 p-4">
           <div className="text-4xl">
             The first alto-mamas rewards protocol on Solama
           </div>
