@@ -240,7 +240,7 @@ const SecondPart = () => {
               <div className="flex p-1 gap-2">
                 <div className="w-2 h-2 mt-3 rounded-full bg-[#5015c9]"></div>
                 <span>
-                  3% is redistributed in order to <br /> incertvize to hold
+                  3% is redistributed in order to <br /> incentivize to hold
                 </span>
               </div>
               <div className="flex p-1 gap-2">
