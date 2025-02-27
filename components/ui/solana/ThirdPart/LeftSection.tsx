@@ -35,7 +35,7 @@ export default function LeftSection() {
   const tokenBurn = Math.floor(volumeNum * 0.01);
   const dailyEarnings = Number(((holdingsNum / 4500) * 0.11).toFixed(2));
   return (
-    <div className="w-full md:w-[600px] lg:mx-1 mx-auto transparency-[10%]  mt-14 lg:mt-20 bg-[#0c0c0df2] border-2 border-purple-900 rounded-[5px]">
+    <div className="w-full md:w-[600px] lg:mx-1 mx-auto  mt-14 lg:mt-20 bg-[#0c0c0d7e] border-2 border-purple-900 rounded-[5px]">
       <div className="px-5 py-7">
         <div className="flex justify-start gap-2 items-center">
           <div className="bg-purple-800 w-3 h-3 rounded-full"></div>
@@ -45,7 +45,7 @@ export default function LeftSection() {
           <div className="text-purple-900">24h Volume (USD)</div>
           <div className="relative">
             <Input
-              className="bg-black w-full border-2 border-purple-900 rounded-[5px] text-white px-2 py-1 pl-6"
+              className="bg-[#00000077] w-full border-2 border-purple-900 rounded-[5px] text-white px-2 py-1 pl-6"
               type="number"
               value={volume}
               onChange={(e) => setVolume(e.target.value)}
@@ -65,7 +65,7 @@ export default function LeftSection() {
           <div className="text-purple-900">Your $SMG Holdings</div>
           <div className="relative">
             <Input
-              className="bg-black w-full border-2 rounded-[5px] border-purple-900 text-white px-2 py-1 pl-6"
+              className="bg-[#00000077] w-full border-2 rounded-[5px] border-purple-900 text-white px-2 py-1 pl-6"
               type="number"
               value={holdings}
               onChange={(e) => setHoldings(e.target.value)}
@@ -77,7 +77,7 @@ export default function LeftSection() {
             </span>
           </div>
         </div>
-        <div className="border-2 transparency-[30%] bg-black p-3 border-purple-900 rounded-[5px] mt-7">
+        <div className="border-2 transparency-[30%] bg-[#00000077] p-3 border-purple-900 rounded-[5px] mt-7">
           <div className="flex justify-between items-center py-3 border-b border-purple-900">
             <div>Daily Rewards Pool</div>
             <div className="text-purple-800 text-3xl">
