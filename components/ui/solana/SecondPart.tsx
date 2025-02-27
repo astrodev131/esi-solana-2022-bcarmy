@@ -70,7 +70,7 @@ const SecondPart = () => {
   }, []);
 
   return (
-    <div className="container mt-20 mx-auto">
+    <div className="container mt-28 mx-auto">
       <div className="flex lg:flex-row flex-col gap-12 justify-evenly items-center relative p-4">
         <div className="flex lg:flex-col flex-row lg:gap-28 gap-6">
           <div className="xl:text-2xl text-lg">
@@ -86,7 +86,14 @@ const SecondPart = () => {
                 ></Image>
               </div>
             </div>
-            <div className="flex flex-col">
+            <div
+              ref={(el) => {
+                if (el && !textBlocksRef.current.includes(el)) {
+                  textBlocksRef.current[2] = el;
+                }
+              }}
+              className="flex flex-col"
+            >
               <span>3% to holders in SOL</span>
               <span>1% bum</span>
               <span>1% marketing</span>
@@ -99,13 +106,20 @@ const SecondPart = () => {
               <div className="absolute lg:block hidden -mr-[30px] mt-[20px]">
                 <Image
                   src="/line4.png"
-                  width={600}
+                  width={500}
                   height={100}
                   alt="line1"
                 ></Image>
               </div>
             </div>
-            <div className="flex flex-col">
+            <div
+              ref={(el) => {
+                if (el && !textBlocksRef.current.includes(el)) {
+                  textBlocksRef.current[3] = el;
+                }
+              }}
+              className="flex flex-col"
+            >
               <span>No problem</span>
               <span>No team tokens</span>
             </div>
@@ -123,7 +137,14 @@ const SecondPart = () => {
                 ></Image>
               </div>
             </div>
-            <div className="flex flex-col">
+            <div
+              ref={(el) => {
+                if (el && !textBlocksRef.current.includes(el)) {
+                  textBlocksRef.current[4] = el;
+                }
+              }}
+              className="flex flex-col"
+            >
               <span>Receive SOL automatically</span>
               <span>every 5 minutes</span>
             </div>
@@ -142,7 +163,7 @@ const SecondPart = () => {
           >
             <source src="/video.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 flex items-center justify-center text-white text-7xl font-semibold">
+          <div className="absolute inset-0 flex items-center justify-center mt-5 text-white text-7xl font-semibold">
             <Image src="/SRP.png" layout="fill" alt="SRP" />
           </div>
         </div>
@@ -151,7 +172,7 @@ const SecondPart = () => {
           <div
             ref={(el) => {
               if (el && !textBlocksRef.current.includes(el)) {
-                textBlocksRef.current[1] = el;
+                textBlocksRef.current[0] = el;
               }
             }}
             className="xl:text-2xl text-lg"
@@ -201,7 +222,7 @@ const SecondPart = () => {
                 textBlocksRef.current[1] = el;
               }
             }}
-            className="xl:text-2xl text-lg"
+            className="xl:text-2xl mt-20 text-lg"
           >
             <div className="uppercase pb-3">why 3/1/1 partition?</div>
             <div className="absolute lg:block hidden -ml-[380px] -mt-[220px] xl:-mt-[230px]">

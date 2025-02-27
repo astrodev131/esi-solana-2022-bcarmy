@@ -2,7 +2,7 @@
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Input } from "../../ui/input";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,91 +18,9 @@ const ThirdPart = () => {
   const dailyRewardsPool = Math.floor(volumeNum * 0.05);
   const tokenBurn = Math.floor(volumeNum * 0.01);
   const dailyEarnings = Number(((holdingsNum / 4500) * 0.11).toFixed(2));
-
-  const videoRef1 = useRef<HTMLDivElement>(null);
-  const videoRef2 = useRef<HTMLDivElement>(null);
-  const textSectionRef = useRef<HTMLDivElement>(null);
-  const textBlocksRef = useRef<HTMLDivElement[]>([]);
-
-  useEffect(() => {
-    if (videoRef1.current) {
-      gsap.fromTo(
-        videoRef1.current,
-        { x: "200%", opacity: 0, rotation: 0 },
-        {
-          x: "0%",
-          opacity: 1,
-          rotation: 0,
-          duration: 4,
-          scrollTrigger: {
-            trigger: videoRef1.current,
-            start: "top 80%",
-            end: "top 50%",
-            scrub: true,
-          },
-        }
-      );
-    }
-
-    if (videoRef2.current) {
-      gsap.fromTo(
-        videoRef2.current,
-        { x: "-100%", opacity: 0, rotation: 0 },
-        {
-          x: "0%",
-          opacity: 1,
-          rotation: 0,
-          duration: 4,
-          scrollTrigger: {
-            trigger: videoRef2.current,
-            start: "top 80%",
-            end: "top 50%",
-            scrub: true,
-          },
-        }
-      );
-    }
-
-    if (textSectionRef.current) {
-      gsap.fromTo(
-        textSectionRef.current,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: textSectionRef.current,
-            start: "top 80%",
-            end: "top 50%",
-            scrub: true,
-          },
-        }
-      );
-    }
-
-    textBlocksRef.current.forEach((textBlock, index) => {
-      gsap.fromTo(
-        textBlock,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: textBlock,
-            start: "top 80%",
-            end: "top 50%",
-            scrub: true,
-          },
-          delay: index * 0.2,
-        }
-      );
-    });
-  }, []);
   return (
-    <div className="mx-auto mb-40 overflow-hidden">
-      <div className="relative z-10 w-full min-h-screen">
+    <div className="mx-auto pb-40 overflow-hidden">
+      <div className="relative z-10 w-full">
         <div className="relative w-full">
           <Image
             src="/1.png"
@@ -111,11 +29,8 @@ const ThirdPart = () => {
             alt="Description of the image"
             className="-z-[1] right-40 absolute"
           />
-          <div className="flex flex-col lg:flex-row  mx-auto items-end gap-10 justify-around">
-            <div
-              ref={videoRef1}
-              className="w-full lg:w-[500px] mt-10 lg:mt-52 bg-[#0c0c0df2] border-2 border-purple-900 rounded-[5px]"
-            >
+          <div className="flex flex-col lg:flex-row  mx-auto items-end gap-20 justify-center">
+            <div className="w-full lg:w-[600px] mt-14 lg:mt-20 bg-[#0c0c0df2] border-2 border-purple-900 rounded-[5px]">
               <div className="px-5 py-7">
                 <div className="flex justify-start gap-2 items-center">
                   <div className="bg-purple-800 w-3 h-3 rounded-full"></div>
@@ -160,7 +75,7 @@ const ThirdPart = () => {
                 <div className="border-2 bg-black p-3 border-purple-900 rounded-[5px] mt-10">
                   <div className="flex justify-between items-center py-3 border-b border-purple-900">
                     <div>No information</div>
-                    <div className="text-purple-800">
+                    <div className="text-purple-800 text-3xl">
                       {" "}
                       ${dailyRewardsPool.toLocaleString()}
                     </div>
@@ -168,14 +83,20 @@ const ThirdPart = () => {
                   <div className="flex justify-between items-start py-3 border-b border-purple-900">
                     <div>No information</div>
                     <div className="text-purple-800 flex flex-col items-end">
-                      <div> ${dailyEarnings.toLocaleString()}</div>
+                      <div className="text-3xl">
+                        {" "}
+                        ${dailyEarnings.toLocaleString()}
+                      </div>
                       <div>No information</div>
                     </div>
                   </div>{" "}
                   <div className="flex justify-between items-start py-3">
                     <div>No information</div>
                     <div className="text-purple-800 flex flex-col items-end">
-                      <div> ${tokenBurn.toLocaleString()}</div>
+                      <div className="text-3xl">
+                        {" "}
+                        ${tokenBurn.toLocaleString()}
+                      </div>
                       <div>No information</div>
                     </div>
                   </div>{" "}
@@ -189,23 +110,13 @@ const ThirdPart = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-10 w-full lg:w-[500px] lg:mt-0">
-              <div
-                ref={(el) => {
-                  if (el && !textBlocksRef.current.includes(el)) {
-                    textBlocksRef.current[1] = el;
-                  }
-                }}
-                className="text-xl lg:text-2xl w-full lg:w-[300px]"
-              >
+            <div className="mt-10 w-full lg:w-[600px] lg:mt-0">
+              <div className="text-xl lg:text-2xl w-full lg:w-[400px]">
                 1% Marketing will guarantee longevity and avoid team/insider
                 trading. We are here to stay
               </div>
-              <div
-                ref={videoRef2}
-                className="mt-12 space-y-4 px-5 bg-[#0c0c0df2] border-2 p-3 border-purple-900 rounded-[5px]"
-              >
-                <div className="flex justify-start gap-2 items-center">
+              <div className="mt-12 space-y-4 px-5 bg-[#0c0c0df2] border-2 p-3 border-purple-900 rounded-[5px]">
+                <div className="flex justify-start gap-4 items-center">
                   <div className="bg-purple-800 w-3 h-3 rounded-full"></div>
                   <div className="text-2xl lg:text-3xl">Contracts</div>
                 </div>
@@ -214,10 +125,11 @@ const ThirdPart = () => {
                   <div className="w-full relative">
                     <Input
                       className="bg-black w-full border-2 rounded-[5px] border-purple-900 text-white px-2 py-2 pl-6"
+                      value={"FvJtwH1vJj9Sk92Gs4pCCqFwrhUUtvQagYFqv5eBy8WL"}
                       type="text"
                       style={{ outline: "none" }}
                     />
-                    <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white cursor-pointer">
+                    <span className="absolute right-2 bg-black z-10 top-1/2 transform -translate-y-1/2 text-white cursor-pointer">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -241,6 +153,7 @@ const ThirdPart = () => {
                     <Input
                       className="bg-black w-full border-2 rounded-[5px] border-purple-900 text-white py-2 pl-6"
                       type="text"
+                      value={"FvJtwH1vJj9Sk92Gs4pCCqFwrhUUtvQagYFqv5eBy8WL"}
                       style={{ outline: "none" }}
                     />
                     <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white cursor-pointer">
