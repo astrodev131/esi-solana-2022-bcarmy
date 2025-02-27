@@ -23,7 +23,7 @@ const FirstPart = () => {
           <div className="sm:text-4xl text-2xl  text-center lg:text-start">
             The first alto-mamas rewards protocol on Solana
           </div>
-          <div className="py-4 text-2xl">
+          <div className="py-4  text-center lg:text-start text-2xl">
             Hold $SRP and earn SOL every 5 minutes
           </div>
           <div className="flex sm:flex-row flex-col justify-center lg:justify-start items-center py-2 gap-4">
