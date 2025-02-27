@@ -2,6 +2,7 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -118,19 +119,23 @@ const SecondPart = () => {
             <source src="/video.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 flex items-center justify-center text-white text-7xl font-semibold">
-            $SRP
+            <Image src="/SRP.png" layout="fill" alt="SRP" />
           </div>
         </div>
         <div ref={textSectionRef} className="flex lg:flex-col flex-row gap-12">
           <div
-            ref={(el) => (textBlocksRef.current[0] = el!)}
+            ref={(el) => {
+              if (el && !textBlocksRef.current.includes(el)) {
+                textBlocksRef.current[1] = el;
+              }
+            }}
             className="md:text-2xl text-lg"
           >
             <div className="uppercase pb-3">how it works?</div>
             <div className="flex flex-col">
               <div className="flex p-1 gap-2">
                 <div className="w-2 h-2 mt-3 rounded-full bg-[#5015c9]"></div>
-                <span>
+                <span style={{ fontFamily: "Telegraf" }}>
                   5% tax is collected from every buy <br /> and sell transaction
                 </span>
               </div>
@@ -157,7 +162,11 @@ const SecondPart = () => {
             </div>
           </div>
           <div
-            ref={(el) => (textBlocksRef.current[1] = el!)}
+            ref={(el) => {
+              if (el && !textBlocksRef.current.includes(el)) {
+                textBlocksRef.current[1] = el;
+              }
+            }}
             className="md:text-2xl text-lg"
           >
             <div className="uppercase pb-3">why 3/1/1 partition?</div>

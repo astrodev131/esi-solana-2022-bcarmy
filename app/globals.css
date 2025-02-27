@@ -17,7 +17,14 @@
   font-size: 14px;
 } */
 
+@font-face {
+  font-family: "Telegraf";
+  src: url(../public/font/TelegrafRegular_272984568a25d8528fe2de8b20b29011.otf)
+    format("truetype");
+}
+
 body {
+  font-family: "Telegraf" !important;
   background-color: #030a10 !important;
   color: white;
   letter-spacing: -0.02em;

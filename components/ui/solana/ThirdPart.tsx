@@ -168,7 +168,11 @@ const ThirdPart = () => {
             </div>
             <div className="mt-10 w-full lg:w-[500px] lg:mt-0">
               <div
-                ref={(el) => (textBlocksRef.current[0] = el!)}
+                ref={(el) => {
+                  if (el && !textBlocksRef.current.includes(el)) {
+                    textBlocksRef.current[1] = el;
+                  }
+                }}
                 className="text-xl lg:text-2xl w-full lg:w-[300px]"
               >
                 1% Marketing will guarantee longevity and avoid team/insider

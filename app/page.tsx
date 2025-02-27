@@ -6,6 +6,7 @@
 // import CTA from "@/components/cta"
 
 import FirstPart from "@/components/ui/solana/FirstPart";
+import Footer from "@/components/ui/solana/Footer";
 import Header from "@/components/ui/solana/Header";
 import SecondPart from "@/components/ui/solana/SecondPart";
 import ThirdPart from "@/components/ui/solana/ThirdPart";
@@ -27,11 +28,14 @@ import ThirdPart from "@/components/ui/solana/ThirdPart";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen p-8">
-      <Header />
-      <FirstPart />
-      <SecondPart />
-      <ThirdPart />
-    </main>
-  )
+    <div className="w-full">
+      <main className="relative min-h-screen p-8">
+        <Header />
+        <FirstPart />
+        <SecondPart />
+        <ThirdPart />
+      </main>
+      <Footer></Footer>
+    </div>
+  );
 }
