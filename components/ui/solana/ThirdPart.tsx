@@ -30,7 +30,7 @@ const ThirdPart = () => {
             className="-z-[1] right-40 absolute"
           />
           <div className="flex flex-col lg:flex-row  mx-auto items-end gap-20 justify-center">
-            <div className="w-full lg:w-[600px] mt-14 lg:mt-20 bg-[#0c0c0df2] border-2 border-purple-900 rounded-[5px]">
+            <div className="w-full md:w-[600px] mx-auto mt-14 lg:mt-20 bg-[#0c0c0df2] border-2 border-purple-900 rounded-[5px]">
               <div className="px-5 py-7">
                 <div className="flex justify-start gap-2 items-center">
                   <div className="bg-purple-800 w-3 h-3 rounded-full"></div>
@@ -110,12 +110,12 @@ const ThirdPart = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-10 w-full lg:w-[600px] lg:mt-0">
-              <div className="text-xl lg:text-2xl w-full lg:w-[400px]">
-                1% Marketing will guarantee longevity and avoid team/insider
+            <div className="mt-10 w-full mx-auto md:w-[600px] lg:mt-0">
+              <div className="text-xl font-bold lg:text-2xl text-center lg:text-start w-full lg:w-[400px] leading-loose tracking-wider">
+                1% on Marketing will guarantee longevity and avoid team/insider
                 trading. We are here to stay
               </div>
-              <div className="mt-12 space-y-4 px-5 bg-[#0c0c0df2] border-2 p-3 border-purple-900 rounded-[5px]">
+              <div className="mt-16 space-y-4 px-5 bg-[#0c0c0df2] border-2 p-3 border-purple-900 rounded-[5px]">
                 <div className="flex justify-start gap-4 items-center">
                   <div className="bg-purple-800 w-3 h-3 rounded-full"></div>
                   <div className="text-2xl lg:text-3xl">Contracts</div>

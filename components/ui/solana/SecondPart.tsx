@@ -59,7 +59,7 @@ const SecondPart = () => {
           duration: 1,
           scrollTrigger: {
             trigger: textBlock,
-            start: "top 80%",
+            start: "top 85%",
             end: "top 50%",
             scrub: true,
           },
@@ -72,8 +72,8 @@ const SecondPart = () => {
   return (
     <div className="container mt-28 mx-auto">
       <div className="flex lg:flex-row flex-col gap-12 justify-evenly items-center relative p-4">
-        <div className="flex lg:flex-col flex-row lg:gap-28 gap-6">
-          <div className="xl:text-2xl text-lg">
+        <div className="flex lg:flex-col sm:flex-row flex-col lg:gap-28 gap-6">
+          <div className="xl:text-2xl text-lg sm:pl-8">
             <div className="flex items-center gap-2 pb-3">
               <div className="w-2 h-2 rounded-full bg-[#5015c9]"></div>
               <p>5% tax on each tx</p>
@@ -124,7 +124,7 @@ const SecondPart = () => {
               <span>No team tokens</span>
             </div>
           </div>
-          <div className="xl:text-2xl text-lg">
+          <div className="xl:text-2xl text-lg sm:pl-4">
             <div className="flex items-center gap-2 pb-3">
               <div className="w-2 h-2 rounded-full bg-[#5015c9]"></div>
               <p>Automatic rewards</p>
@@ -168,14 +168,17 @@ const SecondPart = () => {
           </div>
         </div>
 
-        <div ref={textSectionRef} className="flex lg:flex-col flex-row gap-12">
+        <div
+          ref={textSectionRef}
+          className="flex lg:flex-col sm:flex-row flex-col gap-12"
+        >
           <div
             ref={(el) => {
               if (el && !textBlocksRef.current.includes(el)) {
                 textBlocksRef.current[0] = el;
               }
             }}
-            className="xl:text-2xl text-lg"
+            className="xl:text-2xl text-lg sm:pl-8"
           >
             <div className="uppercase  pb-3">how it works?</div>
             <div className="absolute lg:block hidden -ml-[300px] -mt-[45px]">
@@ -222,7 +225,7 @@ const SecondPart = () => {
                 textBlocksRef.current[1] = el;
               }
             }}
-            className="xl:text-2xl mt-20 text-lg"
+            className="xl:text-2xl lg:mt-20 text-lg"
           >
             <div className="uppercase pb-3">why 3/1/1 partition?</div>
             <div className="absolute lg:block hidden -ml-[380px] -mt-[220px] xl:-mt-[230px]">

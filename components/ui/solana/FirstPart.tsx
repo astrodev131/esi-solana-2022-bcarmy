@@ -19,14 +19,14 @@ const FirstPart = () => {
             <Image src="/SRP.png" layout="fill" alt="SRP" />
           </div>
         </div>
-        <div className="xl:max-w-[700px] max-w-[500px] p-4">
-          <div className="sm:text-4xl text-2xl">
+        <div className="xl:max-w-[700px] justify-center lg:justify-start flex flex-col max-w-[500px] p-4">
+          <div className="sm:text-4xl text-2xl  text-center lg:text-start">
             The first alto-mamas rewards protocol on Solana
           </div>
           <div className="py-4 text-2xl">
             Hold $SRP and earn SOL every 5 minutes
           </div>
-          <div className="flex sm:flex-row flex-col items-center py-2 gap-4">
+          <div className="flex sm:flex-row flex-col justify-center lg:justify-start items-center py-2 gap-4">
             <div className="flex gap-4">
               <button className="px-4 py-2 cursor-pointer text-xl bg-[#000000ad] rounded-[10px] border-gray-600 border hover:bg-[#000000]">
                 Buy Now
