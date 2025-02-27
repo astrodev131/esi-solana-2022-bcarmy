@@ -38,12 +38,12 @@ export default function Home() {
       <Header />
       <FirstPart />
       <SecondPart />
-      <div className="lg:block hidden">
+      <div className="lg:block z-10 hidden">
         <Image
-          width={250}
-          height={300}
+          width={180}
+          height={250}
           src="/vector.png"
-          className="absolute -mt-9 xl:right-20 right-10 "
+          className="absolute -mt-9 z-10 xl:right-20 right-8 "
           alt="vector"
         />
       </div>

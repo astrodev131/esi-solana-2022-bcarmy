@@ -30,18 +30,18 @@ const ThirdPart = () => {
             alt="Description of the image"
             className="-z-[1] right-40 absolute"
           />
-          <div className="flex flex-col lg:flex-row mx-auto items-end gap-28 justify-center">
+          <div className="flex flex-col lg:flex-row mx-auto items-end gap-0 lg:gap-28 justify-center">
             <div className="w-full md:w-[600px] lg:mx-1 mx-auto   mt-14 lg:mt-20 bg-[#0c0c0df2] border-2 border-purple-900 rounded-[5px]">
               <div className="px-5 py-7">
                 <div className="flex justify-start gap-2 items-center">
                   <div className="bg-purple-800 w-3 h-3 rounded-full"></div>
-                  <div className="text-2xl lg:text-5xl">Rewards calculator</div>
+                  <div className="text-3xl xl:text-5xl">Rewards calculator</div>
                 </div>
-                <div className="flex justify-start flex-col gap-2 mt-5">
+                <div className="flex justify-start flex-col gap-2 mt-3">
                   <div className="text-purple-900">24h Volume (USD)</div>
                   <div className="relative">
                     <Input
-                      className="bg-black w-full border-2 border-purple-900 rounded-[5px] text-white px-2 py-2 pl-6"
+                      className="bg-black w-full border-2 border-purple-900 rounded-[5px] text-white px-2 py-1 pl-6"
                       type="number"
                       value={volume}
                       onChange={(e) => setVolume(e.target.value)}
@@ -57,11 +57,11 @@ const ThirdPart = () => {
                     </span>
                   </div>
                 </div>
-                <div className="flex justify-start flex-col gap-2 mt-5">
+                <div className="flex justify-start flex-col gap-2 mt-3">
                   <div className="text-purple-900">Your $SMG Holdings</div>
                   <div className="relative">
                     <Input
-                      className="bg-black w-full border-2 rounded-[5px] border-purple-900 text-white px-2 py-2 pl-6"
+                      className="bg-black w-full border-2 rounded-[5px] border-purple-900 text-white px-2 py-1 pl-6"
                       type="number"
                       value={holdings}
                       onChange={(e) => setHoldings(e.target.value)}
@@ -73,7 +73,7 @@ const ThirdPart = () => {
                     </span>
                   </div>
                 </div>
-                <div className="border-2 bg-black p-3 border-purple-900 rounded-[5px] mt-10">
+                <div className="border-2 bg-black p-3 border-purple-900 rounded-[5px] mt-7">
                   <div className="flex justify-between items-center py-3 border-b border-purple-900">
                     <div>Daily Rewards Pool</div>
                     <div className="text-purple-800 text-3xl">
@@ -111,12 +111,12 @@ const ThirdPart = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-10 w-full lg:mx-1 mx-auto md:w-[600px] lg:mt-0">
-              <div className="text-xl font-bold lg:text-2xl text-center lg:text-start w-full lg:w-[400px] leading-loose tracking-wider">
+            <div className="mt-16 w-full lg:mx-1 mx-auto md:w-[600px] lg:mt-0">
+              <div className="text-2xl font-bold lg:text-3xl text-center lg:text-start w-full lg:w-[550px] leading-7 tracking-normal mt-10 lg:mt-20">
                 1% on Marketing will guarantee longevity and avoid team/insider
                 trading. We are here to stay
               </div>
-              <div className="mt-16 space-y-4 px-5 bg-[#0c0c0df2] border-2 p-3 border-purple-900 rounded-[5px]">
+              <div className="mt-16 space-y-8 px-5 bg-[#0c0c0df2] border-2 p-3 border-purple-900 rounded-[5px]">
                 <div className="flex justify-start gap-4 items-center">
                   <div className="bg-purple-800 w-3 h-3 rounded-full"></div>
                   <div className="text-2xl lg:text-3xl">Contracts</div>
