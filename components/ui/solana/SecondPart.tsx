@@ -24,7 +24,7 @@ const SecondPart = () => {
           duration: 1,
           scrollTrigger: {
             trigger: videoRef.current,
-            start: "top 80%",
+            start: "top 90%",
             end: "top 50%",
             scrub: true,
           },
