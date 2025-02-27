@@ -106,9 +106,10 @@ const ThirdPart = () => {
         <div className="relative w-full">
           <Image
             src="/1.png"
-            fill
+            width={1500}
+            height={500}
             alt="Description of the image"
-            className="-z-[1] -mt-48"
+            className="-z-[1] right-40 absolute"
           />
           <div className="flex flex-col lg:flex-row  mx-auto items-end gap-10 justify-around">
             <div

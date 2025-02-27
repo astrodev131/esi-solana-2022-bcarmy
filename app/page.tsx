@@ -69,6 +69,14 @@ export default function Home() {
           alt="vector"
         />
       </div>
+      {/* <div className="overflow-hidden">
+        <Image
+          src="/1.png"
+          layout="fill"
+          alt="Description of the image"
+          className="-z-[1] overflow-hidden left-[20%] absolute"
+        />
+      </div> */}
       <ThirdPart />
     </main>
   );
