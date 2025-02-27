@@ -82,7 +82,7 @@ export default function LeftSection() {
           <div className="text-gray-800">
             Calcualations based on current trading volume and token holdings
           </div>
-          <div className="flex text-lg justify center gap-4 text-purple-900">
+          <div className="flex font-bold text-lg justify center gap-4 text-purple-900">
             <div>SOL:</div>
             <div>$135</div>
           </div>
