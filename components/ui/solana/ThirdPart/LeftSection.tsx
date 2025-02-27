@@ -35,7 +35,7 @@ export default function LeftSection() {
   const tokenBurn = Math.floor(volumeNum * 0.01);
   const dailyEarnings = Number(((holdingsNum / 4500) * 0.11).toFixed(2));
   return (
-    <div className="w-full md:w-[600px] lg:mx-1 mx-auto transparency-[30%]  mt-14 lg:mt-20 bg-[#0c0c0df2] border-2 border-purple-900 rounded-[5px]">
+    <div className="w-full md:w-[600px] lg:mx-1 mx-auto transparency-[10%]  mt-14 lg:mt-20 bg-[#0c0c0df2] border-2 border-purple-900 rounded-[5px]">
       <div className="px-5 py-7">
         <div className="flex justify-start gap-2 items-center">
           <div className="bg-purple-800 w-3 h-3 rounded-full"></div>
@@ -96,7 +96,7 @@ export default function LeftSection() {
             </div>
           </div>{" "}
           <div className="flex justify-between items-start py-3">
-            <div>Token Burn Amount</div>
+            <div>Your Monthly Earnings</div>
             <div className="text-purple-800 flex flex-col items-end">
               <div className="text-3xl">
                 {" "}
