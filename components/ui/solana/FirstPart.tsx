@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Logo from "@/assets/Logo";
 const FirstPart = () => {
   return (
     <div className="container mx-auto py-8">
@@ -16,27 +17,27 @@ const FirstPart = () => {
           </video>
           <div className="absolute mt-5 inset-0 flex items-center justify-center text-white text-8xl font-semibold">
             {" "}
-            <Image src="/SRP.png" layout="fill" alt="SRP" />
+            <Logo></Logo>
           </div>
         </div>
         <div className="xl:max-w-[700px] justify-center lg:justify-start flex flex-col max-w-[500px] p-4">
           <div className="sm:text-4xl text-2xl  text-center lg:text-start">
-            The first alto-mamas rewards protocol on Solana
+            The first Auto-sustainable rewards protocol on Solana
           </div>
           <div className="py-4  text-center lg:text-start text-2xl">
             Hold $SRP and earn SOL every 5 minutes
           </div>
           <div className="flex sm:flex-row flex-col justify-center lg:justify-start items-center py-2 gap-4">
             <div className="flex gap-4">
-              <button className="px-4 py-2 cursor-pointer text-xl bg-[#000000ad] rounded-[10px] border-gray-600 border hover:bg-[#000000]">
+              <button className="px-4 py-2 z-10 hover:cursor-pointer text-xl bg-[#000000ad] rounded-[10px] border-gray-600 border hover:bg-[#000000]">
                 Buy Now
               </button>
-              <button className="px-4 py-2 cursor-pointer text-xl bg-[#000000ad] rounded-[10px] border-gray-600 border hover:bg-[#000000]">
+              <button className="px-4 py-2 z-10 hover:cursor-pointer text-xl bg-[#000000ad] rounded-[10px] border-gray-600 border hover:bg-[#000000]">
                 Chart
               </button>
             </div>
             <div className="flex gap-4">
-              <button className="px-4 py-2 cursor-pointer text-xl bg-[#000000ad] rounded-[10px] border-gray-600 border hover:bg-[#000000] flex items-center">
+              <button className="px-4 py-2 z-10 hover:cursor-pointer text-xl bg-[#000000ad] rounded-[10px] border-gray-600 border hover:bg-[#000000] flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -47,7 +48,7 @@ const FirstPart = () => {
                   <path d="M24 4.557a9.93 9.93 0 01-2.828.775 4.932 4.932 0 002.165-2.724 9.864 9.864 0 01-3.127 1.195 4.916 4.916 0 00-8.384 4.482A13.94 13.94 0 011.671 3.149a4.916 4.916 0 001.523 6.573 4.897 4.897 0 01-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 01-2.224.084 4.918 4.918 0 004.588 3.417A9.867 9.867 0 010 21.543a13.94 13.94 0 007.548 2.212c9.057 0 14.01-7.514 14.01-14.01 0-.213-.005-.425-.014-.636A10.025 10.025 0 0024 4.557z" />
                 </svg>
               </button>
-              <button className="px-4 py-2 cursor-pointer text-xl bg-[#000000ad] rounded-[10px] border-gray-600 border hover:bg-[#000000] flex items-center">
+              <button className="px-4 py-2 z-10 hover:cursor-pointer text-xl bg-[#000000ad] rounded-[10px] border-gray-600 border hover:bg-[#000000] flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"

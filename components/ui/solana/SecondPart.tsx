@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import Logo from "@/assets/Logo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -106,7 +107,7 @@ const SecondPart = () => {
               <div className="absolute lg:block hidden -mr-[30px] mt-[20px]">
                 <Image
                   src="/line4.png"
-                  width={500}
+                  width={600}
                   height={100}
                   alt="line1"
                 ></Image>
@@ -120,8 +121,8 @@ const SecondPart = () => {
               }}
               className="flex flex-col"
             >
-              <span>No problem</span>
-              <span>No team tokens</span>
+              <span>1% burn</span>
+              <span>No presale</span>
             </div>
           </div>
           <div className="xl:text-2xl text-lg sm:pl-4">
@@ -164,10 +165,9 @@ const SecondPart = () => {
             <source src="/video.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 flex items-center justify-center mt-5 text-white text-7xl font-semibold">
-            <Image src="/SRP.png" layout="fill" alt="SRP" />
-          </div>
+            <Logo></Logo>
+          </div>{" "}
         </div>
-
         <div
           ref={textSectionRef}
           className="flex lg:flex-col sm:flex-row flex-col gap-12"

@@ -38,12 +38,19 @@ export default function Home() {
       <Header />
       <FirstPart />
       <SecondPart />
-      <div className="lg:block z-10 hidden">
+      <div className="xl:block z-10 hidden overflow-hidden">
         <Image
-          width={180}
-          height={250}
-          src="/vector.png"
-          className="absolute -mt-9 z-10 xl:right-20 right-8 "
+          width={250}
+          height={310}
+          src="/vector1.png"
+          className="absolute hidden 3xl:block -mt-10 z-10 xl:right-20  left-[76%] "
+          alt="vector"
+        />
+        <Image
+          width={140}
+          height={210}
+          src="/vector2.png"
+          className="absolute 3xl:hidden block -mt-10 z-10 left-[88%]  2xl:left-[83%] 2.5xl:left-[82%] "
           alt="vector"
         />
       </div>
