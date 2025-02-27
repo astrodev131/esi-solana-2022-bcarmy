@@ -20,7 +20,6 @@ const SecondPart = () => {
         {
           x: "0%",
           opacity: 1,
-          rotation: 360,
           duration: 1,
           scrollTrigger: {
             trigger: videoRef.current,
@@ -191,26 +190,26 @@ const SecondPart = () => {
             </div>
             <div className="flex flex-col space-y-2">
               <div className="flex p-1 gap-2">
-                <div className="w-2 h-2 mt-3 rounded-full bg-[#5015c9]"></div>
+                <div className="w-2 h-2 mt-1 rounded-full bg-[#5015c9]"></div>
                 <span style={{ fontFamily: "Telegraf" }}>
                   5% tax is collected from every buy <br /> and sell transaction
                 </span>
               </div>
               <div className="flex p-1 gap-2">
-                <div className="w-2 h-2 mt-3 rounded-full bg-[#5015c9]"></div>
+                <div className="w-2 h-2 mt-1 rounded-full bg-[#5015c9]"></div>
                 <span>
                   Tax is automatically converted to <br /> Solana
                 </span>
               </div>
               <div className="flex p-1 gap-2">
-                <div className="w-2 h-2 mt-3 rounded-full bg-[#5015c9]"></div>
+                <div className="w-2 h-2 mt-1 rounded-full bg-[#5015c9]"></div>
                 <span>
                   Smart contract distributes Solana <br /> to all holders every
                   5 minutes
                 </span>
               </div>
               <div className="flex p-1 gap-2">
-                <div className="w-2 h-2 mt-3 rounded-full bg-[#5015c9]"></div>
+                <div className="w-2 h-2 mt-1 rounded-full bg-[#5015c9]"></div>
                 <span>
                   Rewards are proportional
                   <br /> to your token holdings
@@ -238,19 +237,19 @@ const SecondPart = () => {
             </div>
             <div className="flex space-y-2 flex-col">
               <div className="flex p-1 gap-2">
-                <div className="w-2 h-2 mt-3 rounded-full bg-[#5015c9]"></div>
+                <div className="w-2 h-2 mt-1 rounded-full bg-[#5015c9]"></div>
                 <span>
                   3% is redistributed in order to <br /> incentivize to hold
                 </span>
               </div>
               <div className="flex p-1 gap-2">
-                <div className="w-2 h-2 mt-3 rounded-full bg-[#5015c9]"></div>
+                <div className="w-2 h-2 mt-1 rounded-full bg-[#5015c9]"></div>
                 <span>
                   1% is burnt in order to keep the <br /> price stable
                 </span>
               </div>
               <div className="flex p-1 gap-2">
-                <div className="w-2 h-2 mt-3 rounded-full bg-[#5015c9]"></div>
+                <div className="w-2 h-2 mt-1 rounded-full bg-[#5015c9]"></div>
                 <span>
                   1% is used to fund marketing <br />
                   and attract new holders

@@ -7,7 +7,7 @@ export default function RightSection() {
         1% on Marketing will guarantee longevity and avoid team/insider trading.
         We are here to stay
       </div>
-      <div className="mt-16 space-y-8 px-5 bg-[#0c0c0df2] border-2 p-3 border-purple-900 rounded-[5px]">
+      <div className="mt-16 transparency-[30%] space-y-8 px-5 bg-[#0c0c0df2] border-2 p-3 border-purple-900 rounded-[5px]">
         <div className="flex justify-start gap-4 items-center">
           <div className="bg-purple-800 w-3 h-3 rounded-full"></div>
           <div className="text-2xl lg:text-3xl">Contracts</div>
@@ -66,7 +66,9 @@ export default function RightSection() {
             </span>
           </div>
         </div>
-        <div className="text-[12px] text-gray-500">Contracts</div>
+        <div className="text-[12px] text-gray-500">
+          CertiK audit coming soon
+        </div>
       </div>
     </div>
   );
