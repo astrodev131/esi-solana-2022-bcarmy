@@ -5,7 +5,7 @@ const FirstPart = () => {
   return (
     <div className="container mx-auto py-8">
       <div className="flex xl:flex-row flex-col justify-around w-full items-center mt-14">
-        <div className="relative sm:w-[400px] sm:h-[400px] xl:w-[500px] xl:h-[500px] w-[300px] h-[300px] rounded-full overflow-hidden flex items-center justify-center">
+        <div className="relative z-10 sm:w-[400px] sm:h-[400px] xl:w-[500px] xl:h-[500px] w-[300px] h-[300px] rounded-full overflow-hidden flex items-center justify-center">
           <video
             className="w-full h-full object-cover"
             autoPlay
