@@ -5,7 +5,7 @@ import { Input } from "../../input";
 export default function LeftSection() {
   const [volume, setVolume] = useState("");
   const [holdings, setHoldings] = useState("");
-  const [solPrice, setSolPrice] = useState<number | null>(null);
+  const [solPrice, setSolPrice] = useState<number | 0>(0);
   const fetchData = async () => {
     const res = await fetch(
       "https://api.allorigins.win/get?url=" +

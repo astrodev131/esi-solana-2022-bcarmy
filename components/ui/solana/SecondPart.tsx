@@ -121,7 +121,7 @@ const SecondPart = () => {
               }}
               className="flex flex-col"
             >
-              <span>No team tokens1% burn</span>
+              <span>No team tokens</span>
               <span>No presale</span>
             </div>
           </div>
