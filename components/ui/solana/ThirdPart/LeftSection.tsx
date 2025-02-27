@@ -46,7 +46,7 @@ export default function LeftSection() {
           <div className="relative">
             <Input
               className="bg-black w-full border-2 border-purple-900 rounded-[5px] text-white px-2 py-1 pl-6"
-              type="number"
+              type="text"
               value={volume}
               onChange={(e) => setVolume(e.target.value)}
               placeholder="0"
