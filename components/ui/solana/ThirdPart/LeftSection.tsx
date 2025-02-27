@@ -67,22 +67,24 @@ export default function LeftSection() {
             <div>Your Daily Earnings</div>
             <div className="text-purple-800 flex flex-col items-end">
               <div className="text-3xl"> ${dailyEarnings.toLocaleString()}</div>
-              <div>No information</div>
+              <div>1231 SOL</div>
             </div>
           </div>{" "}
           <div className="flex justify-between items-start py-3">
             <div>Token Burn Amount</div>
             <div className="text-purple-800 flex flex-col items-end">
               <div className="text-3xl"> ${tokenBurn.toLocaleString()}</div>
-              <div>No information</div>
+              <div>2222 SOL</div>
             </div>
           </div>{" "}
         </div>
-        <div className="flex justify-between mt-3">
-          <div>no information</div>
-          <div className="flex justify center gap-4 text-purple-900">
-            <div>no information</div>
-            <div>no information</div>
+        <div className="flex justify-between items-center mt-3">
+          <div className="text-gray-800">
+            Calcualations based on current trading volume and token holdings
+          </div>
+          <div className="flex text-lg justify center gap-4 text-purple-900">
+            <div>SOL:</div>
+            <div>$135</div>
           </div>
         </div>
       </div>
