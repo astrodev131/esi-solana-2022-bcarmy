@@ -22,6 +22,7 @@ const ThirdPart = () => {
     <div className="mx-auto pb-40 overflow-hidden">
       <div className="relative z-10 w-full">
         <div className="relative w-full">
+          <div className="w-screen overflow-hidden absolute h-1 border-b mt-40 -z-10 border-gray-600 border-dashed"></div>
           <Image
             src="/1.png"
             width={1500}
@@ -29,7 +30,7 @@ const ThirdPart = () => {
             alt="Description of the image"
             className="-z-[1] right-40 absolute"
           />
-          <div className="flex flex-col lg:flex-row  mx-auto items-end gap-28 justify-center">
+          <div className="flex flex-col lg:flex-row mx-auto items-end gap-28 justify-center">
             <div className="w-full md:w-[600px] lg:mx-1 mx-auto   mt-14 lg:mt-20 bg-[#0c0c0df2] border-2 border-purple-900 rounded-[5px]">
               <div className="px-5 py-7">
                 <div className="flex justify-start gap-2 items-center">
@@ -37,7 +38,7 @@ const ThirdPart = () => {
                   <div className="text-2xl lg:text-5xl">Rewards calculator</div>
                 </div>
                 <div className="flex justify-start flex-col gap-2 mt-5">
-                  <div className="text-purple-900">no information</div>
+                  <div className="text-purple-900">24h Volume (USD)</div>
                   <div className="relative">
                     <Input
                       className="bg-black w-full border-2 border-purple-900 rounded-[5px] text-white px-2 py-2 pl-6"
@@ -57,7 +58,7 @@ const ThirdPart = () => {
                   </div>
                 </div>
                 <div className="flex justify-start flex-col gap-2 mt-5">
-                  <div className="text-purple-900">no information</div>
+                  <div className="text-purple-900">Your $SMG Holdings</div>
                   <div className="relative">
                     <Input
                       className="bg-black w-full border-2 rounded-[5px] border-purple-900 text-white px-2 py-2 pl-6"
@@ -74,14 +75,14 @@ const ThirdPart = () => {
                 </div>
                 <div className="border-2 bg-black p-3 border-purple-900 rounded-[5px] mt-10">
                   <div className="flex justify-between items-center py-3 border-b border-purple-900">
-                    <div>No information</div>
+                    <div>Daily Rewards Pool</div>
                     <div className="text-purple-800 text-3xl">
                       {" "}
                       ${dailyRewardsPool.toLocaleString()}
                     </div>
                   </div>{" "}
                   <div className="flex justify-between items-start py-3 border-b border-purple-900">
-                    <div>No information</div>
+                    <div>Your Daily Earnings</div>
                     <div className="text-purple-800 flex flex-col items-end">
                       <div className="text-3xl">
                         {" "}
@@ -91,7 +92,7 @@ const ThirdPart = () => {
                     </div>
                   </div>{" "}
                   <div className="flex justify-between items-start py-3">
-                    <div>No information</div>
+                    <div>Token Burn Amount</div>
                     <div className="text-purple-800 flex flex-col items-end">
                       <div className="text-3xl">
                         {" "}
@@ -121,8 +122,8 @@ const ThirdPart = () => {
                   <div className="text-2xl lg:text-3xl">Contracts</div>
                 </div>
                 <div className="flex w-full items-center gap-7 justify-between">
-                  <div>Token</div>
-                  <div className="w-full relative">
+                  <div className="w-[100px]">Token</div>
+                  <div className="w-full max-w-[450px] relative">
                     <Input
                       className="bg-black w-full border-2 rounded-[5px] border-purple-900 text-white px-2 py-2 pl-6"
                       value={"FvJtwH1vJj9Sk92Gs4pCCqFwrhUUtvQagYFqv5eBy8WL"}
@@ -148,8 +149,8 @@ const ThirdPart = () => {
                   </div>
                 </div>
                 <div className="flex w-full items-center gap-7 justify-between">
-                  <div>Token</div>
-                  <div className="w-full relative">
+                  <div className="w-[100px]">Treasury</div>
+                  <div className="w-full max-w-[450px] relative">
                     <Input
                       className="bg-black w-full border-2 rounded-[5px] border-purple-900 text-white py-2 pl-6"
                       type="text"
