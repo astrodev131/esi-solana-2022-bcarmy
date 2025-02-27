@@ -1,9 +1,31 @@
+"use client";
 import React, { useState } from "react";
 import { Input } from "../../input";
+
 export default function LeftSection() {
   const [volume, setVolume] = useState("");
   const [holdings, setHoldings] = useState("");
+  const [solPrice, setSolPrice] = useState<number | null>(null);
+  const fetchData = async () => {
+    const res = await fetch(
+      "https://api.allorigins.win/get?url=" +
+        encodeURIComponent(
+          "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd"
+        )
+    );
+    if (!res.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await res.json();
+    const parsedData = JSON.parse(data.contents);
+    setSolPrice(parsedData.solana.usd);
+  };
 
+  React.useEffect(() => {
+    fetchData().catch((error) => console.error("Fetch error:", error));
+  }, []);
+
+  console.log(solPrice, "solPrice");
   // Calculate values
   const volumeNum = Number(volume) || 0;
   const holdingsNum = Number(holdings) || 0;
@@ -67,14 +89,20 @@ export default function LeftSection() {
             <div>Your Daily Earnings</div>
             <div className="text-purple-800 flex flex-col items-end">
               <div className="text-3xl"> ${dailyEarnings.toLocaleString()}</div>
-              <div>1231 SOL</div>
+              <div>
+                {solPrice ? (dailyEarnings / solPrice).toLocaleString() : "N/A"}{" "}
+                SOL
+              </div>
             </div>
           </div>{" "}
           <div className="flex justify-between items-start py-3">
             <div>Token Burn Amount</div>
             <div className="text-purple-800 flex flex-col items-end">
               <div className="text-3xl"> ${tokenBurn.toLocaleString()}</div>
-              <div>2222 SOL</div>
+              <div>
+                {" "}
+                {solPrice ? (tokenBurn / solPrice).toLocaleString() : "N/A"} SOL
+              </div>
             </div>
           </div>{" "}
         </div>
@@ -82,9 +110,10 @@ export default function LeftSection() {
           <div className="text-gray-800">
             Calcualations based on current trading volume and token holdings
           </div>
-          <div className="flex font-bold text-lg justify center gap-4 text-purple-900">
-            <div>SOL:</div>
-            <div>$135</div>
+          <div className="flex font-bold text-lg justify center gap-1 text-purple-900">
+            <div>SOL</div>
+            <div>:</div>
+            <div>{solPrice}</div>
           </div>
         </div>
       </div>

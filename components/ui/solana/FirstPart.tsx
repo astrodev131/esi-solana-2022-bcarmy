@@ -22,7 +22,7 @@ const FirstPart = () => {
         </div>
         <div className="xl:max-w-[700px] justify-center lg:justify-start flex flex-col max-w-[500px] p-4">
           <div className="sm:text-4xl text-2xl  text-center lg:text-start">
-            The first Auto-sustainable rewards protocol on Solana
+            The first self-sustaining rewards protocol on Solana
           </div>
           <div className="py-4  text-center lg:text-start text-2xl">
             Hold $SRP and earn SOL every 5 minutes

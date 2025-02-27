@@ -121,7 +121,7 @@ const SecondPart = () => {
               }}
               className="flex flex-col"
             >
-              <span>1% burn</span>
+              <span>No team tokens1% burn</span>
               <span>No presale</span>
             </div>
           </div>
@@ -246,13 +246,13 @@ const SecondPart = () => {
               <div className="flex p-1 gap-2">
                 <div className="w-2 h-2 mt-3 rounded-full bg-[#5015c9]"></div>
                 <span>
-                  1% is bumt in order to keep the <br /> price stable
+                  1% is burnt in order to keep the <br /> price stable
                 </span>
               </div>
               <div className="flex p-1 gap-2">
                 <div className="w-2 h-2 mt-3 rounded-full bg-[#5015c9]"></div>
                 <span>
-                  1% is used to find marketing <br />
+                  1% is used to fund marketing <br />
                   and attract new holders
                 </span>
               </div>
