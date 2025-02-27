@@ -70,13 +70,21 @@ const SecondPart = () => {
   }, []);
 
   return (
-    <div className="container mx-auto">
+    <div className="container mt-20 mx-auto">
       <div className="flex lg:flex-row flex-col gap-12 justify-evenly items-center relative p-4">
         <div className="flex lg:flex-col flex-row lg:gap-28 gap-6">
-          <div className="md:text-2xl text-lg">
+          <div className="xl:text-2xl text-lg">
             <div className="flex items-center gap-2 pb-3">
               <div className="w-2 h-2 rounded-full bg-[#5015c9]"></div>
               <p>5% tax on each tx</p>
+              <div className="absolute  -mr-[30px] xl:mt-[120px] mt-[110px] lg:block hidden">
+                <Image
+                  src="/line3.png"
+                  width={600}
+                  height={100}
+                  alt="line1"
+                ></Image>
+              </div>
             </div>
             <div className="flex flex-col">
               <span>3% to holders in SOL</span>
@@ -84,20 +92,36 @@ const SecondPart = () => {
               <span>1% marketing</span>
             </div>
           </div>
-          <div className="md:text-2xl text-lg">
+          <div className="xl:text-2xl text-lg">
             <div className="flex items-center gap-2 pb-3">
-              <div className="w-2 h-2 rounded-full bg-[#5015c9]"></div>
+              <div className="min-w-2 min-h-2 rounded-full bg-[#5015c9]"></div>
               <p>100% fair launch</p>
+              <div className="absolute lg:block hidden -mr-[30px] mt-[20px]">
+                <Image
+                  src="/line4.png"
+                  width={600}
+                  height={100}
+                  alt="line1"
+                ></Image>
+              </div>
             </div>
             <div className="flex flex-col">
               <span>No problem</span>
               <span>No team tokens</span>
             </div>
           </div>
-          <div className="md:text-2xl text-lg">
+          <div className="xl:text-2xl text-lg">
             <div className="flex items-center gap-2 pb-3">
               <div className="w-2 h-2 rounded-full bg-[#5015c9]"></div>
               <p>Automatic rewards</p>
+              <div className="absolute lg:block hidden -mr-[30px] xl:-mt-[65px] -mt-[75px]">
+                <Image
+                  src="/line5.png"
+                  width={600}
+                  height={100}
+                  alt="line1"
+                ></Image>
+              </div>
             </div>
             <div className="flex flex-col">
               <span>Receive SOL automatically</span>
@@ -107,7 +131,7 @@ const SecondPart = () => {
         </div>
         <div
           ref={videoRef}
-          className="relative xl:w-[400px] xl:h-[400px] w-[300px] h-[300px] rounded-full overflow-hidden flex items-center justify-center"
+          className="relative z-10 md:w-[400px] md:h-[400px] w-[300px] h-[300px] rounded-full overflow-hidden flex items-center justify-center"
         >
           <video
             className="w-full h-full object-cover"
@@ -122,6 +146,7 @@ const SecondPart = () => {
             <Image src="/SRP.png" layout="fill" alt="SRP" />
           </div>
         </div>
+
         <div ref={textSectionRef} className="flex lg:flex-col flex-row gap-12">
           <div
             ref={(el) => {
@@ -129,10 +154,18 @@ const SecondPart = () => {
                 textBlocksRef.current[1] = el;
               }
             }}
-            className="md:text-2xl text-lg"
+            className="xl:text-2xl text-lg"
           >
-            <div className="uppercase pb-3">how it works?</div>
-            <div className="flex flex-col">
+            <div className="uppercase  pb-3">how it works?</div>
+            <div className="absolute lg:block hidden -ml-[300px] -mt-[45px]">
+              <Image
+                src="/line1.png"
+                width={900}
+                height={100}
+                alt="line1"
+              ></Image>
+            </div>
+            <div className="flex flex-col space-y-2">
               <div className="flex p-1 gap-2">
                 <div className="w-2 h-2 mt-3 rounded-full bg-[#5015c9]"></div>
                 <span style={{ fontFamily: "Telegraf" }}>
@@ -161,16 +194,25 @@ const SecondPart = () => {
               </div>
             </div>
           </div>
+
           <div
             ref={(el) => {
               if (el && !textBlocksRef.current.includes(el)) {
                 textBlocksRef.current[1] = el;
               }
             }}
-            className="md:text-2xl text-lg"
+            className="xl:text-2xl text-lg"
           >
             <div className="uppercase pb-3">why 3/1/1 partition?</div>
-            <div className="flex flex-col">
+            <div className="absolute lg:block hidden -ml-[380px] -mt-[220px] xl:-mt-[230px]">
+              <Image
+                src="/line2.png"
+                width={700}
+                height={100}
+                alt="line1"
+              ></Image>
+            </div>
+            <div className="flex space-y-2 flex-col">
               <div className="flex p-1 gap-2">
                 <div className="w-2 h-2 mt-3 rounded-full bg-[#5015c9]"></div>
                 <span>

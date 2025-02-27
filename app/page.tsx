@@ -1,3 +1,4 @@
+"use client";
 // import Hero from "@/components/hero"
 // import ParticleBackground from "@/components/particle-background"
 // import ScrollingText from "@/components/scrolling-text"
@@ -6,10 +7,15 @@
 // import CTA from "@/components/cta"
 
 import FirstPart from "@/components/ui/solana/FirstPart";
-import Footer from "@/components/ui/solana/Footer";
+import React, { useRef, useEffect } from "react";
 import Header from "@/components/ui/solana/Header";
 import SecondPart from "@/components/ui/solana/SecondPart";
 import ThirdPart from "@/components/ui/solana/ThirdPart";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+
+gsap.registerPlugin(ScrollTrigger);
 
 // export default function Home() {
 //   return (
@@ -27,15 +33,43 @@ import ThirdPart from "@/components/ui/solana/ThirdPart";
 // }
 
 export default function Home() {
+  const videoRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      gsap.fromTo(
+        videoRef.current,
+        { x: "-100%", opacity: 0, rotation: 0 },
+        {
+          x: "0%",
+          opacity: 1,
+          rotation: 360,
+          duration: 1,
+          scrollTrigger: {
+            trigger: videoRef.current,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: true,
+          },
+        }
+      );
+    }
+  });
   return (
-    <div className="w-full">
-      <main className="relative min-h-screen p-8">
-        <Header />
-        <FirstPart />
-        <SecondPart />
-        <ThirdPart />
-      </main>
-      <Footer></Footer>
-    </div>
+    <main className="relative min-h-screen p-8">
+      <Header />
+      <FirstPart />
+      <SecondPart />
+      <div className="lg:block hidden" ref={videoRef}>
+        <Image
+          width={300}
+          height={500}
+          src="/vector.png"
+          className="absolute xl:right-20 right-10 "
+          alt="vector"
+        />
+      </div>
+      <ThirdPart />
+    </main>
   );
 }
