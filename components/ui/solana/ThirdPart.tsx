@@ -2,10 +2,23 @@
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
+import { Input } from "../Input";
 gsap.registerPlugin(ScrollTrigger);
 
 const ThirdPart = () => {
+  const [volume, setVolume] = useState("");
+  const [holdings, setHoldings] = useState("");
+
+  // Calculate values
+  const volumeNum = Number(volume) || 0;
+  const holdingsNum = Number(holdings) || 0;
+
+  // Calculations based on the example values
+  const dailyRewardsPool = Math.floor(volumeNum * 0.05);
+  const tokenBurn = Math.floor(volumeNum * 0.01);
+  const dailyEarnings = Number(((holdingsNum / 4500) * 0.11).toFixed(2));
+
   const videoRef1 = useRef<HTMLDivElement>(null);
   const videoRef2 = useRef<HTMLDivElement>(null);
   const textSectionRef = useRef<HTMLDivElement>(null);
@@ -88,7 +101,7 @@ const ThirdPart = () => {
     });
   }, []);
   return (
-    <div className="container mx-auto">
+    <div className="mx-auto mb-40 overflow-hidden">
       <div className="relative z-10 w-full min-h-screen">
         <div className="relative w-full">
           <Image
@@ -97,7 +110,7 @@ const ThirdPart = () => {
             alt="Description of the image"
             className="-z-[1] -mt-48"
           />
-          <div className="flex flex-col lg:flex-row w-[90%] mx-auto items-end gap-10 justify-around">
+          <div className="flex flex-col lg:flex-row  mx-auto items-end gap-10 justify-around">
             <div
               ref={videoRef1}
               className="w-full lg:w-[500px] mt-10 lg:mt-52 bg-[#0c0c0df2] border-2 border-purple-900 rounded-[5px]"
@@ -110,9 +123,12 @@ const ThirdPart = () => {
                 <div className="flex justify-start flex-col gap-2 mt-5">
                   <div className="text-purple-900">no information</div>
                   <div className="relative">
-                    <input
+                    <Input
                       className="bg-black w-full border-2 border-purple-900 rounded-[5px] text-white px-2 py-2 pl-6"
-                      type="text"
+                      type="number"
+                      value={volume}
+                      onChange={(e) => setVolume(e.target.value)}
+                      placeholder="0"
                       style={{ outline: "none" }}
                     />
                     <span className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white">
@@ -127,9 +143,12 @@ const ThirdPart = () => {
                 <div className="flex justify-start flex-col gap-2 mt-5">
                   <div className="text-purple-900">no information</div>
                   <div className="relative">
-                    <input
+                    <Input
                       className="bg-black w-full border-2 rounded-[5px] border-purple-900 text-white px-2 py-2 pl-6"
-                      type="text"
+                      type="number"
+                      value={holdings}
+                      onChange={(e) => setHoldings(e.target.value)}
+                      placeholder="0"
                       style={{ outline: "none" }}
                     />
                     <span className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white">
@@ -140,19 +159,22 @@ const ThirdPart = () => {
                 <div className="border-2 bg-black p-3 border-purple-900 rounded-[5px] mt-10">
                   <div className="flex justify-between items-center py-3 border-b border-purple-900">
                     <div>No information</div>
-                    <div className="text-purple-800">$300000</div>
+                    <div className="text-purple-800">
+                      {" "}
+                      ${dailyRewardsPool.toLocaleString()}
+                    </div>
                   </div>{" "}
                   <div className="flex justify-between items-start py-3 border-b border-purple-900">
                     <div>No information</div>
                     <div className="text-purple-800 flex flex-col items-end">
-                      <div>$300000</div>
+                      <div> ${dailyEarnings.toLocaleString()}</div>
                       <div>No information</div>
                     </div>
                   </div>{" "}
                   <div className="flex justify-between items-start py-3">
                     <div>No information</div>
                     <div className="text-purple-800 flex flex-col items-end">
-                      <div>$300000</div>
+                      <div> ${tokenBurn.toLocaleString()}</div>
                       <div>No information</div>
                     </div>
                   </div>{" "}
@@ -189,7 +211,7 @@ const ThirdPart = () => {
                 <div className="flex w-full items-center gap-7 justify-between">
                   <div>Token</div>
                   <div className="w-full relative">
-                    <input
+                    <Input
                       className="bg-black w-full border-2 rounded-[5px] border-purple-900 text-white px-2 py-2 pl-6"
                       type="text"
                       style={{ outline: "none" }}
@@ -215,7 +237,7 @@ const ThirdPart = () => {
                 <div className="flex w-full items-center gap-7 justify-between">
                   <div>Token</div>
                   <div className="w-full relative">
-                    <input
+                    <Input
                       className="bg-black w-full border-2 rounded-[5px] border-purple-900 text-white py-2 pl-6"
                       type="text"
                       style={{ outline: "none" }}
