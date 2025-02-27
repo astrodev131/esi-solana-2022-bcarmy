@@ -1,5 +1,3 @@
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useState } from "react";
 import { Input } from "../../input";
 export default function LeftSection() {

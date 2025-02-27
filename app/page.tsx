@@ -38,7 +38,7 @@ export default function Home() {
       <Header />
       <FirstPart />
       <SecondPart />
-      <div className="xl:block z-10 hidden overflow-hidden">
+      <div className="lg:block z-10 hidden overflow-hidden">
         <Image
           width={250}
           height={310}
@@ -47,10 +47,10 @@ export default function Home() {
           alt="vector"
         />
         <Image
-          width={140}
-          height={210}
+          width={115}
+          height={190}
           src="/vector2.png"
-          className="absolute 3xl:hidden block -mt-10 z-10 left-[88%]  2xl:left-[83%] 2.5xl:left-[82%] "
+          className="absolute 3xl:hidden block -mt-10 z-10 left-[89%]  2xl:left-[84%] 2.5xl:left-[82%] "
           alt="vector"
         />
       </div>
