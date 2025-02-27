@@ -152,7 +152,7 @@ const SecondPart = () => {
         </div>
         <div
           ref={videoRef}
-          className="relative z-10 md:w-[400px] md:h-[400px] w-[300px] h-[300px] rounded-full overflow-hidden flex items-center justify-center"
+          className="relative z-10 md:min-w-[400px] md:h-[400px] min-w-[300px] h-[300px] rounded-full overflow-hidden flex items-center justify-center"
         >
           <video
             className="w-full h-full object-cover"
