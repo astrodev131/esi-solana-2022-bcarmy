@@ -1,6 +1,73 @@
-import React from "react";
+"use client";
+import React, { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const SecondPart = () => {
+  const videoRef = useRef<HTMLDivElement>(null);
+  const textSectionRef = useRef<HTMLDivElement>(null);
+  const textBlocksRef = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      gsap.fromTo(
+        videoRef.current,
+        { x: "-100%", opacity: 0, rotation: 0 },
+        {
+          x: "0%",
+          opacity: 1,
+          rotation: 360,
+          duration: 1,
+          scrollTrigger: {
+            trigger: videoRef.current,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: true,
+          },
+        }
+      );
+    }
+
+    if (textSectionRef.current) {
+      gsap.fromTo(
+        textSectionRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: textSectionRef.current,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: true,
+          },
+        }
+      );
+    }
+
+    textBlocksRef.current.forEach((textBlock, index) => {
+      gsap.fromTo(
+        textBlock,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: textBlock,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: true,
+          },
+          delay: index * 0.2,
+        }
+      );
+    });
+  }, []);
+
   return (
     <div className="container mx-auto">
       <div className="flex lg:flex-row flex-col gap-12 justify-evenly items-center relative p-4">
@@ -37,7 +104,10 @@ const SecondPart = () => {
             </div>
           </div>
         </div>
-        <div className="relative xl:w-[400px] xl:h-[400px] w-[300px] h-[300px] rounded-full overflow-hidden flex items-center justify-center">
+        <div
+          ref={videoRef}
+          className="relative xl:w-[400px] xl:h-[400px] w-[300px] h-[300px] rounded-full overflow-hidden flex items-center justify-center"
+        >
           <video
             className="w-full h-full object-cover"
             autoPlay
@@ -51,8 +121,11 @@ const SecondPart = () => {
             $SRP
           </div>
         </div>
-        <div className="flex lg:flex-col flex-row gap-12">
-          <div className="md:text-2xl text-lg">
+        <div ref={textSectionRef} className="flex lg:flex-col flex-row gap-12">
+          <div
+            ref={(el) => (textBlocksRef.current[0] = el!)}
+            className="md:text-2xl text-lg"
+          >
             <div className="uppercase pb-3">how it works?</div>
             <div className="flex flex-col">
               <div className="flex p-1 gap-2">
@@ -83,7 +156,10 @@ const SecondPart = () => {
               </div>
             </div>
           </div>
-          <div className="md:text-2xl text-lg">
+          <div
+            ref={(el) => (textBlocksRef.current[1] = el!)}
+            className="md:text-2xl text-lg"
+          >
             <div className="uppercase pb-3">why 3/1/1 partition?</div>
             <div className="flex flex-col">
               <div className="flex p-1 gap-2">

@@ -1,19 +1,107 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useRef, useEffect } from "react";
+gsap.registerPlugin(ScrollTrigger);
 
 const ThirdPart = () => {
+  const videoRef1 = useRef<HTMLDivElement>(null);
+  const videoRef2 = useRef<HTMLDivElement>(null);
+  const textSectionRef = useRef<HTMLDivElement>(null);
+  const textBlocksRef = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    if (videoRef1.current) {
+      gsap.fromTo(
+        videoRef1.current,
+        { x: "200%", opacity: 0, rotation: 0 },
+        {
+          x: "0%",
+          opacity: 1,
+          rotation: 0,
+          duration: 4,
+          scrollTrigger: {
+            trigger: videoRef1.current,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: true,
+          },
+        }
+      );
+    }
+
+    if (videoRef2.current) {
+      gsap.fromTo(
+        videoRef2.current,
+        { x: "-100%", opacity: 0, rotation: 0 },
+        {
+          x: "0%",
+          opacity: 1,
+          rotation: 0,
+          duration: 4,
+          scrollTrigger: {
+            trigger: videoRef2.current,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: true,
+          },
+        }
+      );
+    }
+
+    if (textSectionRef.current) {
+      gsap.fromTo(
+        textSectionRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: textSectionRef.current,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: true,
+          },
+        }
+      );
+    }
+
+    textBlocksRef.current.forEach((textBlock, index) => {
+      gsap.fromTo(
+        textBlock,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: textBlock,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: true,
+          },
+          delay: index * 0.2,
+        }
+      );
+    });
+  }, []);
   return (
     <div className="container mx-auto">
       <div className="relative z-10 w-full min-h-screen">
-        <div className="relative w-full h-[1000px]">
+        <div className="relative w-full">
           <Image
             src="/1.png"
             fill
             alt="Description of the image"
-            className="-z-[1]"
+            className="-z-[1] -mt-48"
           />
           <div className="flex flex-col lg:flex-row w-[90%] mx-auto items-end gap-10 justify-around">
-            <div className="w-full lg:w-[500px] mt-10 lg:mt-52 bg-[#0c0c0df2] border-2 border-purple-900 rounded-[5px]">
+            <div
+              ref={videoRef1}
+              className="w-full lg:w-[500px] mt-10 lg:mt-52 bg-[#0c0c0df2] border-2 border-purple-900 rounded-[5px]"
+            >
               <div className="px-5 py-7">
                 <div className="flex justify-start gap-2 items-center">
                   <div className="bg-purple-800 w-3 h-3 rounded-full"></div>
@@ -79,11 +167,17 @@ const ThirdPart = () => {
               </div>
             </div>
             <div className="mt-10 w-full lg:w-[500px] lg:mt-0">
-              <div className="text-xl lg:text-2xl w-full lg:w-[300px]">
+              <div
+                ref={(el) => (textBlocksRef.current[0] = el!)}
+                className="text-xl lg:text-2xl w-full lg:w-[300px]"
+              >
                 1% Marketing will guarantee longevity and avoid team/insider
                 trading. We are here to stay
               </div>
-              <div className="mt-12 space-y-4 px-5 bg-[#0c0c0df2] border-2 p-3 border-purple-900 rounded-[5px]">
+              <div
+                ref={videoRef2}
+                className="mt-12 space-y-4 px-5 bg-[#0c0c0df2] border-2 p-3 border-purple-900 rounded-[5px]"
+              >
                 <div className="flex justify-start gap-2 items-center">
                   <div className="bg-purple-800 w-3 h-3 rounded-full"></div>
                   <div className="text-2xl lg:text-3xl">Contracts</div>
