@@ -8,7 +8,6 @@ const ThirdPart = () => {
     <div className="mx-auto pb-40 overflow-hidden">
       <div className="relative z-10 w-full">
         <div className="relative w-full">
-          <div className="w-screen overflow-hidden absolute h-1 border-b mt-40 -z-10 border-gray-600 border-dashed"></div>
           <Image
             src="/1.png"
             width={1500}
